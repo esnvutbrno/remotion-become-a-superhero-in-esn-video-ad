@@ -1,38 +1,23 @@
 import {Composition} from 'remotion';
-import {HelloWorld} from './HelloWorld';
-import {Logo} from './HelloWorld/Logo';
-import {Subtitle} from './HelloWorld/Subtitle';
+import {Speakers} from './Speakers';
+import {Logo} from './Ad/Logo';
+import {Subtitle} from './Ad/Subtitle';
+import {SLIDE_LENGTH, SPEAKER_LENGTH} from './Ad/config';
 
 export const RemotionVideo: React.FC = () => {
 	return (
 		<>
 			<Composition
-				id="HelloWorld"
-				component={HelloWorld}
-				durationInFrames={150}
+				id="Speakers"
+				component={Speakers}
+				durationInFrames={SPEAKER_LENGTH * 3 + 2* SLIDE_LENGTH}
 				fps={30}
-				width={1920}
-				height={1080}
+				width={1080}
+				height={1920}
 				defaultProps={{
 					titleText: 'Welcome to Remotion',
 					titleColor: 'black',
 				}}
-			/>
-			<Composition
-				id="Logo"
-				component={Logo}
-				durationInFrames={200}
-				fps={30}
-				width={1920}
-				height={1080}
-			/>
-			<Composition
-				id="Title"
-				component={Subtitle}
-				durationInFrames={100}
-				fps={30}
-				width={1920}
-				height={1080}
 			/>
 		</>
 	);
