@@ -1,7 +1,4 @@
 import {interpolate, Sequence, useCurrentFrame, useVideoConfig} from 'remotion';
-import {Logo} from './Ad/Logo';
-import {Subtitle} from './Ad/Subtitle';
-import {Title} from './Ad/Title';
 import {SpeakerPanel} from './Ad/SpeakerPanel';
 import {SLIDE_LENGTH, SPEAKER_LENGTH} from './Ad/config';
 import {Superhero} from './Ad/Superhero';

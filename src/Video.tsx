@@ -1,8 +1,7 @@
 import {Composition} from 'remotion';
 import {Speakers} from './Speakers';
-import {Logo} from './Ad/Logo';
-import {Subtitle} from './Ad/Subtitle';
-import {SLIDE_LENGTH, SPEAKER_LENGTH} from './Ad/config';
+import {INTRO_LENGTH, SLIDE_LENGTH, SPEAKER_LENGTH} from './Ad/config';
+import {Intro} from './Intro';
 
 export const RemotionVideo: React.FC = () => {
 	return (
@@ -14,10 +13,14 @@ export const RemotionVideo: React.FC = () => {
 				fps={30}
 				width={1080}
 				height={1920}
-				defaultProps={{
-					titleText: 'Welcome to Remotion',
-					titleColor: 'black',
-				}}
+			/>
+			<Composition
+				id="Intro"
+				component={Intro}
+				durationInFrames={SLIDE_LENGTH +  INTRO_LENGTH + SLIDE_LENGTH}
+				fps={30}
+				width={1080}
+				height={1920}
 			/>
 		</>
 	);
