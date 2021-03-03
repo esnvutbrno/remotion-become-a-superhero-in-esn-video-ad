@@ -19,12 +19,16 @@ export const Intro: React.FC<{
 	return (
 		<div style={{flex: 1, backgroundColor: 'white'}}>
 			<Sequence from={0} durationInFrames={INTRO_LENGTH + 2*SLIDE_LENGTH}>
-				<div style={{margin: '20px', top: `${move}px`}}>
 				<h1 style={{
 						fontSize: 100,
 						position: 'absolute',
-						top: '30vw',
+						top: '600px',
 						textAlign: 'center',
+						fontFamily: 'Bowlby One SC',
+						fontWeight: 200,
+						padding: '40px',
+						color: 'white',
+						textShadow: '0 0 20px black',
 				}}
 				>
 					{text.map((t, i) => {
@@ -50,7 +54,6 @@ export const Intro: React.FC<{
 							);
 						})}
 				</h1>
-				</div>
 			</Sequence>
 		</div>
 	);

@@ -1,5 +1,7 @@
 import {Img, interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import panda from './../assets/panda.png';
+import Panda from './../assets/panda.png';
+import Man from './../assets/man.png';
+import Woman from './../assets/woman.png';
 import {SLIDE_LENGTH} from './config';
 
 export const Superhero: React.FC<{
@@ -11,25 +13,27 @@ export const Superhero: React.FC<{
 	const forward = frame <= (durationInFrames - SLIDE_LENGTH);
 
 	const from = man ? 'right' : 'left';
+	const img = man ? Man : Woman;
 	return (
 		<div style={{
 			position: 'absolute',
-			bottom: '5vh',
-			width: '20vw',
+			bottom: '60px',
+			width: '620px',
+			transform: 'scale(-1, 1)',
 			[from]: forward ? `${spring({
 				from: 105,
-				to: 70,
+				to: 60,
 				frame,
-				fps,
+				fps
 			})}%` : `${spring({
-				from: 70,
+				from: 60,
 				to: 105,
 				frame: frame - (durationInFrames - SLIDE_LENGTH),
-				fps,
+				fps
 			})}%`
 		}}
 		>
-			<Img src={panda} style={{maxWidth: '100%'}}/>
+			<Img src={img} style={{maxWidth: '100%'}} />
 		</div>
 	);
 };

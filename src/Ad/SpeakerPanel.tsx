@@ -5,7 +5,8 @@ export const SpeakerPanel: React.FC<{
 	name: string;
 	title: string;
 	man: boolean;
-}> = ({name, title, man}) => {
+	fontSize?: number;
+}> = ({name, title, man, fontSize = 125}) => {
 	const {durationInFrames, fps} = useVideoConfig();
 	const frame = useCurrentFrame();
 	const text = name.split(' ').map((t) => ` ${t} `);
@@ -27,26 +28,29 @@ export const SpeakerPanel: React.FC<{
 	return (
 		<div style={{
 			position: 'absolute',
-			top: '20vh',
+			top: '600px',
 			width: '100%',
-			padding: '5vw'
+			padding: '60px'
 		}}>
 			<h1
 				style={{
-					fontFamily: 'Helvetica',
-					fontWeight: 'bold',
-					fontSize: 110,
+					fontFamily: 'Bowlby One SC',
+					fontWeight: 200,
+					lineHeight: 1.2,
+					color: 'white',
+					textShadow: '0 0 20px black',
 					// maxWidth: '60%',
 					textAlign,
 					opacity,
+					fontSize,
 				}}
-			>{title}</h1>
+			>{title.split(' ').map((t, i)=><span>{t}<br/></span>)}</h1>
 			<h2
 				style={{
-				fontFamily: 'Helvetica',
-				fontWeight: 'bold',
 				fontSize: 60,
 				textAlign,
+				fontFamily: 'Bowlby One SC',
+				fontWeight: 200
 				}}
 			>{text.map((t, i) => {
 				return (
@@ -63,7 +67,7 @@ export const SpeakerPanel: React.FC<{
 									mass: 0.5,
 								},
 							})})`,
-							display: 'inline-block',
+							display: 'block',
 						}}
 					>
 						{t}
