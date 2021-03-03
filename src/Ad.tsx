@@ -1,6 +1,6 @@
-import {interpolate, Sequence, useCurrentFrame, useVideoConfig, Easing} from 'remotion';
+import {interpolate, Sequence, useCurrentFrame, useVideoConfig, Easing, Img} from 'remotion';
 import {SpeakerPanel} from './Ad/SpeakerPanel';
-import {DATE_LENGTH, SLIDE_LENGTH, SPEAKER_LENGTH} from './Ad/config';
+import {DATE_LENGTH, INTRO_LENGTH, SLIDE_LENGTH, SPEAKER_LENGTH} from './Ad/config';
 import {Superhero} from './Ad/Superhero';
 import {Speakers} from './Speakers';
 import bckg from './assets/bckg-2.png';
@@ -18,7 +18,7 @@ export const Ad: React.FC<{
 	const backgLeft = interpolate(
 		frame,
 		[0, videoConfig.durationInFrames],
-		[0, 400],
+		[0, 200],
 	)
 
 	const loopLength = 30;
@@ -46,6 +46,7 @@ export const Ad: React.FC<{
 					// backgroundSize: '1301001'
 				}}>
 				</div>
+				<Img src={bckg} style={{display: 'absolute', left: '100%'}}/>
 			</Sequence>
 			<Sequence layout="none" from={0}
 								durationInFrames={450}>
@@ -56,9 +57,10 @@ export const Ad: React.FC<{
 					top: '150px',
 					padding: '0 30px',
 					transform: `translateY(${translateY}px)`,
+					textAlign: 'center'
 					// backgroundColor: forward ? 'green' : 'red',
 				}}>
-					<img src={logo} style={{maxWidth: '100%'}}/>
+					<Img src={logo} style={{maxWidth: '100%'}}/>
 				</div>
 			</Sequence>
 			<Sequence layout="none" from={0}
@@ -73,12 +75,15 @@ export const Ad: React.FC<{
 								durationInFrames={3*SPEAKER_LENGTH + 2*SLIDE_LENGTH}>
 				<Speakers />
 			</Sequence>
-			<Sequence layout="none" from={375 - SLIDE_LENGTH/2}
-								durationInFrames={DATE_LENGTH - 15 }>
+			<Sequence layout="none" from={
+				INTRO_LENGTH + DATE_LENGTH +
+				3.1*SPEAKER_LENGTH + SLIDE_LENGTH * 4.5}
+								durationInFrames={DATE_LENGTH}>
 				<DateInfo />
 			</Sequence>
-			<Sequence layout="none" from={375+DATE_LENGTH-15}
-								durationInFrames={30}>
+			<Sequence layout="none" from={INTRO_LENGTH + DATE_LENGTH +
+			3.1*SPEAKER_LENGTH + SLIDE_LENGTH * 4.5 + DATE_LENGTH}
+								durationInFrames={20}>
 				<ESNLogo />
 			</Sequence>
 		</div>

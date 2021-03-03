@@ -17,20 +17,34 @@ export const Superhero: React.FC<{
 	return (
 		<div style={{
 			position: 'absolute',
-			bottom: '60px',
 			width: '620px',
 			transform: 'scale(-1, 1)',
 			[from]: forward ? `${spring({
 				from: 105,
 				to: 60,
 				frame,
-				fps
+				fps,
+				config: {mass: .75}
 			})}%` : `${spring({
 				from: 60,
 				to: 105,
 				frame: frame - (durationInFrames - SLIDE_LENGTH),
-				fps
-			})}%`
+				fps,
+				config: {mass: .75}
+			})}%`,
+			bottom: forward ? `${spring({
+				from: -10,
+				to: 6.5,
+				frame,
+				fps,
+				config: {mass: .75}
+			})}%` : `${spring({
+				from: 6.5,
+				to: -10,
+				frame: frame - (durationInFrames - SLIDE_LENGTH),
+				fps,
+				config: {mass: .75}
+			})}%`,
 		}}
 		>
 			<Img src={img} style={{maxWidth: '100%'}} />

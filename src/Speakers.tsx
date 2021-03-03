@@ -37,7 +37,7 @@ export const Speakers: React.FC<{
 				</Sequence>
 
 				<Sequence from={2.1*SPEAKER_LENGTH + 2*SLIDE_LENGTH} durationInFrames={SPEAKER_LENGTH}>
-					<SpeakerPanel man name="Tom Kantor" title="My Way" fontSize={180}/>
+					<SpeakerPanel man name="Tom Kantor" title="My Way" />
 				</Sequence>
 				<Sequence from={2.1*SPEAKER_LENGTH+1.5*SLIDE_LENGTH} durationInFrames={SPEAKER_LENGTH + SLIDE_LENGTH / 2}>
 					<Superhero man/>
