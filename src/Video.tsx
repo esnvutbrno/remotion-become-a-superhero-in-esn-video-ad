@@ -4,6 +4,7 @@ import {DATE_LENGTH, INTRO_LENGTH, SLIDE_LENGTH, SPEAKER_LENGTH} from './Ad/conf
 import {Intro} from './Intro';
 import {Ad} from './Ad';
 import {DateInfo} from './DateInfo';
+import {ESNLogo} from './ESNLogo';
 
 export const RemotionVideo: React.FC = () => {
 	return (
@@ -36,6 +37,14 @@ export const RemotionVideo: React.FC = () => {
 				id="DateInfo"
 				component={DateInfo}
 				durationInFrames={SLIDE_LENGTH +  DATE_LENGTH + SLIDE_LENGTH}
+				fps={30}
+				width={1080}
+				height={1920}
+			/>
+			<Composition
+				id="ESNLogo"
+				component={ESNLogo}
+				durationInFrames={30}
 				fps={30}
 				width={1080}
 				height={1920}

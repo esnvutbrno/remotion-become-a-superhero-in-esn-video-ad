@@ -3,7 +3,7 @@ import {SpeakerPanel} from './Ad/SpeakerPanel';
 import {DATE_LENGTH, SLIDE_LENGTH, SPEAKER_LENGTH} from './Ad/config';
 import {Superhero} from './Ad/Superhero';
 import {Speakers} from './Speakers';
-import bckg from './assets/bckg.png';
+import bckg from './assets/bckg-2.png';
 import logo from './assets/bsesn.png';
 import {Intro} from './Intro';
 import {DateInfo} from './DateInfo';
@@ -18,7 +18,7 @@ export const Ad: React.FC<{
 	const backgLeft = interpolate(
 		frame,
 		[0, videoConfig.durationInFrames],
-		[0, 500],
+		[0, 400],
 	)
 
 	const loopLength = 30;
@@ -43,7 +43,7 @@ export const Ad: React.FC<{
 					position: 'absolute',
 					backgroundImage: `url(${bckg})`,
 					backgroundPositionX: `${backgLeft}%`,
-					backgroundColor: 'red'
+					// backgroundSize: '1301001'
 				}}>
 				</div>
 			</Sequence>
@@ -74,11 +74,11 @@ export const Ad: React.FC<{
 				<Speakers />
 			</Sequence>
 			<Sequence layout="none" from={375 - SLIDE_LENGTH/2}
-								durationInFrames={DATE_LENGTH }>
+								durationInFrames={DATE_LENGTH - 15 }>
 				<DateInfo />
 			</Sequence>
-			<Sequence layout="none" from={375+DATE_LENGTH}
-								durationInFrames={15}>
+			<Sequence layout="none" from={375+DATE_LENGTH-15}
+								durationInFrames={30}>
 				<ESNLogo />
 			</Sequence>
 		</div>

@@ -1,5 +1,5 @@
 import {interpolate, Sequence, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {DATE_LENGTH, INTRO_LENGTH, SLIDE_LENGTH} from './Ad/config';
+import {DATE_LENGTH, INTRO_LENGTH, SLIDE_LENGTH, TEXT_SPRING_CONFIG} from './Ad/config';
 
 export const DateInfo: React.FC<{
 
@@ -18,22 +18,28 @@ export const DateInfo: React.FC<{
 	return (
 		<div style={{flex: 1, backgroundColor: 'white'}}>
 				<h1 style={{
-						fontSize: 140,
+						fontSize: 160,
 						position: 'absolute',
 						width: '100%',
-						top: '600px',
+						top: '650px',
 						textAlign: 'center',
 						fontFamily: 'Bowlby One SC',
 						fontWeight: 200,
 						color: 'white',
 						textShadow: '0 0 20px black',
+						transform: `scale(${spring({
+							fps,
+							frame: fadingOut ? durationInFrames - frame : frame,
+							config: TEXT_SPRING_CONFIG,
+						})})`,
+						display: 'inline-block',
 				}}
 				>
 					<span style={{
-						// color: '#f7ec32-',
-						// textShadow: '0 8px 0 #89201f'
+						color: '#f7ec32',
+						textShadow: '0 0 20px #89201f'
 					}}>ČTVRTEK 20:00</span> <br />
-					LINK V BIU
+					<span style={{fontSize: 100}}>LINK V BIU</span>
 				</h1>
 		</div>
 	);

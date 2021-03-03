@@ -50,7 +50,9 @@ export const SpeakerPanel: React.FC<{
 				fontSize: 60,
 				textAlign,
 				fontFamily: 'Bowlby One SC',
-				fontWeight: 200
+				fontWeight: 200,
+				color: 'white',
+				textShadow: '0 0 20px black',
 				}}
 			>{text.map((t, i) => {
 				return (

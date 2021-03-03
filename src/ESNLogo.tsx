@@ -1,5 +1,5 @@
 import {interpolate, Sequence, spring, useCurrentFrame, useVideoConfig} from 'remotion';
-import {DATE_LENGTH, INTRO_LENGTH, SLIDE_LENGTH} from './Ad/config';
+import {DATE_LENGTH, INTRO_LENGTH, SLIDE_LENGTH, TEXT_SPRING_CONFIG} from './Ad/config';
 import logo from './assets/logo.png'
 
 export const ESNLogo: React.FC<{
@@ -25,7 +25,11 @@ export const ESNLogo: React.FC<{
 					top: '700px',
 					padding: '100px',
 					width: '100%',
-					opacity,
+					transform: fadingOut ? 'initial' : `scale(${spring({
+						fps,
+						frame: fadingOut ? durationInFrames - frame : frame,
+						config: TEXT_SPRING_CONFIG,
+					})})`
 				}}>
 					<img src={logo} style={{
 						maxWidth: '100%'
