@@ -14,7 +14,7 @@ export const RemotionVideo: React.FC = () => {
 				component={Ad}
 				durationInFrames={450}
 				fps={30}
-				width={1080}
+				width={1920}
 				height={1920}
 			/>
 			<Composition

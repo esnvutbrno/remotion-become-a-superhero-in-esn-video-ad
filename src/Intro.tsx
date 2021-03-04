@@ -32,10 +32,10 @@ export const Intro: React.FC<{
 	return (
 		<div style={{flex: 1, backgroundColor: 'white', 					 }}>
 				<h1 style={{
-						fontSize: 110,
+						fontSize: 130,
 						position: 'absolute',
 						width: '100%',
-						top: '450px',
+						top: '600px',
 						textAlign: 'center',
 						fontFamily: 'Bowlby One SC',
 						fontWeight: 200,
@@ -45,10 +45,10 @@ export const Intro: React.FC<{
 						display: 'inline-block'
 				}}
 				>
-					<div style={{marginBottom: '40px'}}>
+					<div style={{marginBottom: '80px'}}>
 						{['Levej', 'na', <div>angličtinu?</div>].map(animate)}
 					</div>
-					<div style={{marginBottom: '60px'}}>
+					<div style={{marginBottom: '100px'}}>
 						{['Chybí', 'Ti', <div>sociálno?</div>].map(delay(animate, 15))}
 					</div>
 					<div style={{fontSize: 140, color: '#F7EC32', textShadow: '0 0 20px #89201f'}}>

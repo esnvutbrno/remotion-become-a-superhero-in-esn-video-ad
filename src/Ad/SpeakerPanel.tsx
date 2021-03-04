@@ -30,7 +30,7 @@ export const SpeakerPanel: React.FC<{
 			position: 'absolute',
 			top: '600px',
 			width: '100%',
-			padding: '80px'
+			padding: '80px 120px'
 		}}>
 			<h1
 				style={{

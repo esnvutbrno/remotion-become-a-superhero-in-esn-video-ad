@@ -39,7 +39,7 @@ export const DateInfo: React.FC<{
 						color: '#f7ec32',
 						textShadow: '0 0 20px #89201f'
 					}}>ČTVRTEK 20:00</span> <br />
-					<span style={{fontSize: 100}}>LINK V BIU</span>
+					<span style={{fontSize: 100}}>link v popisku</span>
 				</h1>
 		</div>
 	);
