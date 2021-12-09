@@ -1,49 +1,8 @@
-# Remotion video
+# Promotion Video Ad: Become a Superhero in ESN
 
-<p align="center">
-  <a href="https://github.com/JonnyBurger/remotion-logo">
-    <img src="https://github.com/JonnyBurger/remotion-logo/raw/main/withtitle/element-0.png">
-  </a>
-</p>
+## Portrait final version
+https://user-images.githubusercontent.com/6154740/145471199-8dd10242-ae7b-4b06-bd4c-beff34fc0241.mp4
 
-Welcome to your Remotion project!
+## Square final version
+https://user-images.githubusercontent.com/6154740/145471203-827e0f60-0ff7-435e-89b4-db6fbd96068e.mp4
 
-## Commands
-
-**Start Preview**
-
-```console
-npm start
-```
-
-**Render video**
-
-```console
-npm run build
-```
-
-**Server render demo**
-
-```console
-npm run server
-```
-
-See [docs for server-side rendering](https://www.remotion.dev/docs/ssr) here.
-
-**Upgrade Remotion**
-
-```console
-npm run upgrade
-```
-
-## Docs
-
-Get started with Remotion by reading the [fundamentals page](https://www.remotion.dev/docs/the-fundamentals).
-
-## Issues
-
-Found an issue with Remotion? [File an issue here](https://github.com/JonnyBurger/remotion/issues/new).
-
-## License
-
-Notice that a company license is needed. Read [the terms here](https://github.com/JonnyBurger/remotion/blob/main/LICENSE.md).
