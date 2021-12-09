@@ -1,7 +1,7 @@
 {
-	"name": "remotion-template",
+	"name": "remotion-become-a-superhero-in-esn-video-ad",
 	"version": "1.0.0",
-	"description": "My Remotion video",
+	"description": "Remotion video used for ESN event promotion",
 	"scripts": {
 		"start": "remotion preview src/index.tsx",
 		"build": "remotion render src/index.tsx Ad out.mp4",
