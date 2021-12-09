@@ -1,3 +1,5 @@
+![Become a Superhero in ESN](src/assets/bsesn.png)
+
 # Promotion Video Ad: Become a Superhero in ESN
 
 ## Portrait final version
